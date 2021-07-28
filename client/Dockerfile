@@ -7,7 +7,8 @@ USER node
 COPY --chown=node:node ./package.json ./
 RUN npm install
 COPY --chown=node:node . .
-CMD ["npm", "run", "build"]
+RUN npm run build
+#CMD ["npm", "run", "build"]
 
 FROM nginx
 EXPOSE 3000
