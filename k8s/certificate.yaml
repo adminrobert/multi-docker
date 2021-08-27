@@ -1,0 +1,13 @@
+apiVersion: cert-manager.io/v1
+
+kind: Certificate
+metadata:
+  name: gke-kubernetes-adminrobert-com-tls
+spec:
+  secretName: gke-kubernetes-adminrobert-com
+  issuerRef:
+    name: letsencrypt-prod
+    kind: ClusterIssuer
+  commonName: gke.kubernetes.adminrobert.com
+  dnsNames:
+    - gke.kubernetes.adminrobert.com
